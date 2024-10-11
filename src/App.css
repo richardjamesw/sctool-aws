@@ -5,6 +5,12 @@
   text-align: center;
 }
 
+body {
+  background-image: url("bg_chi.jpg") top right no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
