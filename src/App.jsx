@@ -1,7 +1,6 @@
-import { Flex, Image } from "@aws-amplify/ui-react";
+import { Flex } from "@aws-amplify/ui-react";
 import WelcomeView from './views/WelcomeView';
 import LoginView from './views/LoginView';
-import background from "./assets/bg_chi3.jpg";
 
 export default function App() {
   return (
@@ -12,6 +11,10 @@ export default function App() {
         alignContent="stretch"
         wrap="nowrap"
         gap="2rem"
+        backgroundColor="white"
+        borderRadius={"1rem"}
+        padding={"4rem"}
+        height="90vh"
       >
         {/* Header?*/}
         <Flex
