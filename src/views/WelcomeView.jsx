@@ -8,13 +8,13 @@ import {
 export default function WelcomeView() {
     return (
         <Flex direction="column"
-            alignItems="center" margin="0 8em 0 0">
+            alignItems="center" margin="0 6em 0 0">
             <Flex direction="row">
                 <Image src="logo.png" margin="0 2em 0 0" width="80px" height="80px"/>
                 <Flex direction="column">
                     <Heading level="4" color="#27AE6B">brightlens.io</Heading>
                     <Heading level="6">Open your eyes! Sales, marketing, success!</Heading>
-                    <Button alignSelf="center" width="100px">account</Button>
+                    <Button alignSelf="center" width="100px" margin="0 2em 0 0">account</Button>
                 </Flex>
             </Flex>
         </Flex>

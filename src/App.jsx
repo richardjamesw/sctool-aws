@@ -13,7 +13,7 @@ export default function App() {
         backgroundColor="white"
         borderRadius="1rem"
         padding="4rem"
-        height="90vh"
+        height="87vh"
       >
         {/* Header?*/}
         
