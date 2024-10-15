@@ -12,7 +12,6 @@ import {
   Divider,
 } from "@aws-amplify/ui-react";
 import { Amplify } from "aws-amplify";
-import "@aws-amplify/ui-react/styles.css";
 import { getUrl } from "aws-amplify/storage";
 import { uploadData } from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
@@ -27,7 +26,7 @@ const client = generateClient({
   authMode: "userPool",
 });
 
-export default function LoginView() {
+export default function AccountView() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
