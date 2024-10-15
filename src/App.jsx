@@ -1,29 +1,20 @@
-import { Grid } from "@aws-amplify/ui-react";
-import WelcomeView from './views/WelcomeView';
-import FooterView from './views/FooterView';
 import "@aws-amplify/ui-react/styles.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LayoutPage from "./views/LayoutPage";
+import LandingPage from "./views/landing/LandingPage";
+import AccountPage from "./views/account/AccountPage";
+import NoPage from "./views/NoPage";
 
 export default function App() {
   return (
-    <Grid
-        templateRows="85% 15%"
-        alignItems="center"
-        wrap="nowrap"
-        gap="2rem"
-        backgroundColor="white"
-        borderRadius="1rem"
-        padding="4rem"
-        height="87vh"
-      >
-        {/* Header?*/}
-        
-        {/* // Top Center - Welcome screen*/}
-        <WelcomeView />
-        {/* // Below show Company description/overview*/}
-
-        {/* // Footer*/}
-        <FooterView />
-
-      </Grid>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LayoutPage />}>
+          <Route index element={<LandingPage />}/>
+          <Route exact path="account" element={<AccountPage />} />
+          <Route exact path="*" element={<NoPage />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }

@@ -3,7 +3,8 @@ import {
     Flex,
     Image,
     Button
-  } from "@aws-amplify/ui-react";
+} from "@aws-amplify/ui-react";
+import { Link } from "react-router-dom";
 
 export default function WelcomeView() {
     return (
@@ -14,7 +15,10 @@ export default function WelcomeView() {
                 <Flex direction="column">
                     <Heading level="4" color="#27AE6B">brightlens.io</Heading>
                     <Heading level="6">Open your eyes! Sales, marketing, success!</Heading>
-                    <Button alignSelf="center" width="100px" margin="0 2em 0 0">account</Button>
+                    
+                    <Link to="/account">
+                        <Button>account</Button>
+                    </Link>
                 </Flex>
             </Flex>
         </Flex>

@@ -15,7 +15,7 @@ import { Amplify } from "aws-amplify";
 import { getUrl } from "aws-amplify/storage";
 import { uploadData } from "aws-amplify/storage";
 import { generateClient } from "aws-amplify/data";
-import outputs from "../../amplify_outputs.json";
+import outputs from "../../../amplify_outputs.json";
 
 /**
  * @type {import('aws-amplify/data').Client<import('../amplify/data/resource').Schema>}
@@ -26,7 +26,7 @@ const client = generateClient({
   authMode: "userPool",
 });
 
-export default function AccountView() {
+export default function AccountPage() {
   const [notes, setNotes] = useState([]);
 
   useEffect(() => {
