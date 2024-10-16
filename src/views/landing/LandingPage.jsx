@@ -7,7 +7,7 @@ export default function LandingPage() {
             templateRows="50% 50%"
             alignItems="center"
             wrap="nowrap"
-            gap="1rem"
+            margin={"10px"}
           >
             
             {/* // Top Center - Welcome screen*/}

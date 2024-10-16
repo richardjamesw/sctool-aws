@@ -9,16 +9,16 @@ export default function LayoutPage() {
             backgroundColor="white"
             alignItems="center"
             wrap="nowrap"
-            gap="1rem" padding="5px 5px 25px 5px"
             borderRadius="15px"
-            height="96vh"
             minWidth="300px"
+            height="auto"
+            minHeight="96.5vh"
           >
             {/* Header?*/}
             
             
             {/* Main Content */}
-            <Outlet/>
+            <Outlet />
 
             {/* Header?*/}
             <FooterView />

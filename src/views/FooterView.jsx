@@ -2,7 +2,7 @@ import { Flex, Button, Text, ButtonGroup } from "@aws-amplify/ui-react";
 
 export default function FooterView() {
   return (
-    <Flex direction="column" alignItems="center" >
+    <Flex direction="column" alignItems="center" margin="10px 10px 45px 10px">
 
         {/* Buttons: Privacy Policy, About, Contact */}
         <ButtonGroup alignItems="center" size="small" direction="row" border="none">
