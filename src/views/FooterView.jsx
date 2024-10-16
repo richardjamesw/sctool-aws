@@ -5,13 +5,13 @@ export default function FooterView() {
     <Flex direction="column" alignItems="center" >
 
         {/* Buttons: Privacy Policy, About, Contact */}
-        <ButtonGroup size="small" direction="row" border="none">
+        <ButtonGroup alignItems="center" size="small" direction="row" border="none">
             <Button border="none">Policies</Button>
             <Button border="none">About</Button>
             <Button border="none">Contact</Button>
         </ButtonGroup>
         {/* Copyright */}
-        <Text>Copyright © 2024, BrightLens Development Group</Text>
+        <Text textAlign="center">Copyright © 2024, BrightLens Development Group</Text>
         {/* Social Links */}
 
       </Flex>
