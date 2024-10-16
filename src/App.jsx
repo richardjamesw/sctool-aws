@@ -10,7 +10,7 @@ export default function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<LayoutPage />}>
-          <Route index element={<LandingPage />}/>
+          <Route index element={<LandingPage />} />
           <Route exact path="account" element={<AccountPage />} />
           <Route exact path="*" element={<NoPage />} />
         </Route>

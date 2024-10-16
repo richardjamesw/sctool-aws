@@ -34,7 +34,7 @@ export default function AccountPage() {
   }, []);
 
   async function fetchNotes() {
-    const {data: notes } = await client.models.Notes.list();
+    const { data: notes } = await client.models.Notes.list();
     await Promise.all(
       notes.map(async (note) => {
         if (note.image) {
@@ -59,13 +59,11 @@ export default function AccountPage() {
     const { data: newNote } = await client.models.Note.create({
       name: form.get("name"),
       description: form.get("description"),
-      image: form.get("image").name
-
+      image: form.get("image").name,
     });
 
     console.log(newNote);
-    if (newNote.image)
-    {
+    if (newNote.image) {
       await uploadData({
         path: ({ identityId }) => `media/${identityId}/${newNote.image}`,
         data: form.get("image"),
@@ -94,7 +92,7 @@ export default function AccountPage() {
       {/* // If not logged in show Login/Create User box*/}
       {/* // If logged in show user profile box*/}
       {({ signOut }) => (
-        <Flex 
+        <Flex
           className="App"
           justifyContent="center"
           alignItems="center"
@@ -104,7 +102,7 @@ export default function AccountPage() {
         >
           <Heading level={1}>My Notes App</Heading>
           <View as="form" margin="3rem 0" onSubmit={createNote}>
-            <Flex 
+            <Flex
               direction="column"
               justifyContent="center"
               gap="2rem"
@@ -116,7 +114,8 @@ export default function AccountPage() {
                 label="Note Name"
                 labelHidden
                 variation="quiet"
-                required />
+                required
+              />
               <TextField
                 name="description"
                 placeholder="Note Description"
@@ -132,7 +131,9 @@ export default function AccountPage() {
                 alignSelf={"end"}
                 accept="image/png, image/jpeg"
               />
-              <Button type="submit" variation="primary">Create Note</Button>
+              <Button type="submit" variation="primary">
+                Create Note
+              </Button>
             </Flex>
           </View>
           <Divider />
