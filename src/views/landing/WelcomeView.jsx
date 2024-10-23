@@ -13,8 +13,8 @@ export default function WelcomeView() {
       <Heading textAlign="center" level="6">
         Open your eyes! Sales, marketing, success!
       </Heading>
-      <Link to="/account">
-        <Button>account</Button>
+      <Link to="/settings">
+        <Button>settings</Button>
       </Link>
     </Flex>
   );
