@@ -9,14 +9,15 @@ and "delete" any "Todo" records.
 const schema = a.schema({
   Users: a
     .model({
-      fName:a.string(),
-      lName:a.string(),
-      email: a.string(),
+      fName: a.string(),
+      lName: a.string(),
+      email: a.string().required(),
       company: a.string(),
       joinedDateTime: a.datetime(),
+      role: a.enum(['Admin', 'ClientManager', 'Client']),
     })
     .authorization((allow) => [allow.owner()]),
-    Contacts: a
+  Contacts: a
     .model({
       fName:a.string(),
       lName:a.string(),
