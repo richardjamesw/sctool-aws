@@ -1,6 +1,6 @@
 import { Flex, Grid, Image, Button } from "@aws-amplify/ui-react";
 
-export default function IntegrationView(props) {
+export default function IntegrationCard(props) {
   props.title
   props.description
   props.logo

@@ -1,7 +1,7 @@
 import { Flex, Grid } from "@aws-amplify/ui-react";
-import IntegrationView from "./IntegrationView";
+import IntegrationCard from "./IntegrationCard";
 
-export default function SettingsPage() {
+export default function IntegrationsView() {
   let acConnected = false;
   return (
     <Grid
@@ -9,7 +9,6 @@ export default function SettingsPage() {
       alignItems="center"
       wrap="nowrap"
       margin="10px"
-
     >
       {/* Integrations & Workflows */}
       <Flex direction="column" margin={"10px 10px 40px 10px"}>
@@ -18,21 +17,21 @@ export default function SettingsPage() {
       </Flex>
 
       {/* Active Campaign */}
-      <IntegrationView
+      <IntegrationCard
         title={"Active Campaign"} 
         description={"Sync your contacts and manage marketing campaigns directly through Active Campaign."}
         connected={acConnected}
         logo="logo_ac.png" />
 
       {/* Gong */}
-      <IntegrationView
+      <IntegrationCard
         title={"Gong"} 
         description={"Leverage Gong for call analysis and insights."}
         connected={acConnected}
         logo="logo_gong.webp" />
       
       {/* ChatGPT */}
-      <IntegrationView
+      <IntegrationCard
         title={"ChatGPT"} 
         description={"Automate responses using ChatGPT's API."}
         connected={acConnected}
