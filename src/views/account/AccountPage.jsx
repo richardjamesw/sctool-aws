@@ -4,29 +4,29 @@ import {
   Flex,
   Grid,
 } from "@aws-amplify/ui-react";
-
+import { useState } from "react";
 import DashboardView from './DashboardView';
 import InsightsView from './InsightsView';
 import IntegrationsView from './IntegrationsView';
 import SettingsView from './SettingsView';
 
 export default function AccountPage() {
-  var outletView = <DashboardView />;
+  const [outletView, setOutletView] = useState(DashboardView);
 
   function updateOutlet(newView) {
     switch (newView) {
       case "dashboard":
-        outletView = <DashboardView />;
+        setOutletView(DashboardView);
         break;
       case "insights":
-        outletView = <InsightsView />;
+        setOutletView(InsightsView);
         break;
       case "integrations":
-        outletView = <IntegrationsView />;
+        setOutletView(IntegrationsView);
         break;
       case "settings":
         console.log("test");
-        outletView = <SettingsView />;
+        setOutletView(SettingsView);
         break;
     }
   }
@@ -36,16 +36,15 @@ export default function AccountPage() {
      // {({ signOut }) => (
         <Grid
           templateColumns=".2fr .8fr"
-          alignItems="flex-start"
           wrap="nowrap"
           margin="10px"
         >
-          {/*<Button onClick={signOut}>Sign Out</Button>*/}
           <Menu>
             <MenuItem onClick={() => updateOutlet("dashboard")}>Dashboard</MenuItem>
             <MenuItem onClick={() => updateOutlet("insights")}>Insights</MenuItem>
             <MenuItem onClick={() => updateOutlet("integrations")}>Integrations</MenuItem>
             <MenuItem onClick={() => updateOutlet("settings")}>Settings</MenuItem>
+            {/*<MenuItem onClick={signOut}>Sign Out</MenuItem>*/}
           </Menu>
           <Flex>
             {outletView}
