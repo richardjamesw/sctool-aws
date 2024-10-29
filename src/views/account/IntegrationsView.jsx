@@ -1,4 +1,4 @@
-import { Flex, Grid } from "@aws-amplify/ui-react";
+import { Flex, Grid, Heading } from "@aws-amplify/ui-react";
 import IntegrationCard from "./IntegrationCard";
 
 export default function IntegrationsView() {
@@ -8,11 +8,12 @@ export default function IntegrationsView() {
       templateRows=".25fr 1fr 1fr 1fr .25fr"
       alignItems="center"
       wrap="nowrap"
-      margin="10px"
     >
       {/* Integrations & Workflows */}
-      <Flex direction="column" margin={"10px 10px 40px 10px"}>
-        <h2>Integrations & Workflows</h2>
+      <Flex direction="column">
+        <Heading textAlign="start" level="5">
+          Integrations & Workflows
+        </Heading>
         <h5 style={{margin:"-10px 1px 1px 10px"}}>Monitor your data seamlessly for the tools you use everyday.</h5>
       </Flex>
 

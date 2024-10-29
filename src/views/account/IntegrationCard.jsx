@@ -16,15 +16,15 @@ export default function IntegrationCard(props) {
       margin="5px"
       padding="8px"
       border={connBorder}
-      borderRadius="10px"
+      borderRadius="15px"
       backgroundColor="whitesmoke"
     >
-      <Grid alignItems={"center"} templateColumns={".1fr .3fr .5fr .1fr"}>
+      <Grid alignItems={"center"} templateColumns={".1fr .4fr .4fr .1fr"}>
         {/* Icon with connected status */}
         <Image src={props.logo} width="3rem" height="3rem" />
 
         {/* Title */}
-        <h3>{props.title}</h3>
+        <h3 style={{margin:"0px 0px 0px 10px"}}>{props.title}</h3>
 
         <div/>
         {/* Sync or Delete Button */}
