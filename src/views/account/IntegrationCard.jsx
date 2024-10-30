@@ -1,4 +1,4 @@
-import { Flex, Grid, Image, Button } from "@aws-amplify/ui-react";
+import { Flex, Image, Button } from "@aws-amplify/ui-react";
 
 export default function IntegrationCard(props) {
   props.title
@@ -11,25 +11,24 @@ export default function IntegrationCard(props) {
 
   return (
     <Flex
-      direction={"column"}
+      direction="column"
       wrap="nowrap"
       margin="5px"
-      padding="8px"
+      padding="7px"
       border={connBorder}
       borderRadius="15px"
       backgroundColor="whitesmoke"
     >
-      <Grid alignItems={"center"} templateColumns={".1fr .4fr .4fr .1fr"}>
+      <Flex justifyContent={"space-between"}>
         {/* Icon with connected status */}
         <Image src={props.logo} width="3rem" height="3rem" />
 
-        {/* Title */}
-        <h3 style={{margin:"0px 0px 0px 10px"}}>{props.title}</h3>
-
-        <div/>
         {/* Sync or Delete Button */}
         <Button>Sync</Button>
-      </Grid>
+      </Flex>
+
+      {/* Title */}
+      <h3 style={{margin:"0px 0px 0px 10px"}}>{props.title}</h3>
 
       {/* Description */}
       <h5 style={{margin:"-10px 1px 10px 10px"}}>{props.description}</h5>

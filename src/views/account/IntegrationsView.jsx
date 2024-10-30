@@ -6,7 +6,7 @@ export default function IntegrationsView() {
   return (
     <Grid
       templateRows=".25fr 1fr 1fr 1fr .25fr"
-      alignItems="center"
+      templateColumns={"1fr"}
       wrap="nowrap"
     >
       {/* Integrations & Workflows */}

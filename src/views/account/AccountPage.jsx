@@ -1,5 +1,6 @@
 import {
   Button,
+  ButtonGroup,
   Flex,
   Grid
 } from "@aws-amplify/ui-react";
@@ -35,13 +36,14 @@ export default function AccountPage() {
      // {({ signOut }) => (
         <Grid
           templateColumns=".2fr .8fr"
-          height="80%"
           wrap="nowrap"
           margin="10px"
         >
           <Grid
-            templateRows=".1fr .1fr .1fr .6fr .1fr"
-            border="1px solid grey">
+            templateRows="2rem 2rem 2rem 15rem 2rem"
+            height="fit-content"
+            border="1px solid grey"
+          >
             <Button border="none" onClick={() => updateOutlet("dashboard")}>Dashboard</Button>
             <Button border="none" onClick={() => updateOutlet("insights")}>Insights</Button>
             <Button border="none" onClick={() => updateOutlet("integrations")}>Integrations</Button>
@@ -49,7 +51,7 @@ export default function AccountPage() {
             <Button border="none" onClick={() => updateOutlet("settings")}>Settings</Button>
             {/*<Button onClick={signOut}>Sign Out</Button>*/}
           </Grid>
-          <Flex margin="3rem">
+          <Flex margin={"0 0 0 1rem"} width="100%">
             {outletView}
           </Flex>
         </Grid>
