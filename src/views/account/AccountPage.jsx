@@ -41,7 +41,7 @@ export default function AccountPage() {
         >
           <Grid
             templateRows="2rem 2rem 2rem 15rem 2rem"
-            height="fit-content"
+            height="fit-content" maxWidth="150px"
             border="1px solid grey"
           >
             <Button border="none" onClick={() => updateOutlet("dashboard")}>Dashboard</Button>
