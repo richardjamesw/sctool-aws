@@ -4,6 +4,11 @@ import { createRoot } from 'react-dom/client';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
+//Amplify
+import { Amplify } from 'aws-amplify';
+import { generateClient } from 'aws-amplify/data';
+import outputs from '../amplify_outputs.json';
+
 // project imports
 import App from './App';
 import reducer from './store/reducer';
@@ -31,6 +36,11 @@ import reportWebVitals from 'reportWebVitals';
 const container = document.getElementById('root');
 const root = createRoot(container); // createRoot(container!) if you use TypeScript
 const store = configureStore({ reducer });
+
+Amplify.configure(outputs);
+const client = generateClient({
+  authMode: 'userPool'
+});
 
 // ==============================|| REACT DOM RENDER  ||============================== //
 

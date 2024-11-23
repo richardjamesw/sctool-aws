@@ -1,33 +1,18 @@
 import { lazy } from 'react';
-import { Amplify } from "aws-amplify";
-import { generateClient } from "aws-amplify/data";
-import outputs from "../../../amplify_outputs.json";
 
-// project imports
-import ProtectedRoute from './ProtectedRoute'
+import ProtectedRoute from './ProtectedRoute';
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
-// dashboard routing
+// routes
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
-
-// utilities routing
 const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
-// const UtilsMaterialIcons = Loadable(lazy(() => import('views/utilities/MaterialIcons')));
-// const UtilsTablerIcons = Loadable(lazy(() => import('views/utilities/TablerIcons')));
-
-// sample page routing
 const IntegrationsPage = Loadable(lazy(() => import('views/other/IntegrationsPage')));
 const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
 
+
 // ==============================|| MAIN ROUTING ||============================== //
-
-Amplify.configure(outputs);
-const client = generateClient({
-  authMode: "userPool",
-});
-
 const MainRoutes = {
   path: '/',
   element: (

@@ -1,15 +1,22 @@
 /* eslint-disable react/prop-types */
-import Navigate from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { getCurrentUser } from 'aws-amplify/auth';
 
-const ProtectedRoute = ({ children }) => {
-  try {
-    getCurrentUser();
-  } catch (ex) {
-    Console.log('User not logged in' + ex);
-    return <Navigate to="/pages/login" />;
-  }
-  return children;
-};
+export function ProtectedRoute({ children }) {
+  const navigate = useNavigate();
+
+  const [isAuth, setIsAuth] = useState(null);
+
+  useEffect(() => {
+    getCurrentUser()
+      .then(() => setIsAuth(true))
+      .catch((err) => {
+        console.log('User not logged in.\n' + err);
+        navigate('/pages/login');
+      });
+  }, []);
+  return isAuth && children;
+}
 
 export default ProtectedRoute;
