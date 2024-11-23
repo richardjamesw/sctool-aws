@@ -1,6 +1,10 @@
 import { lazy } from 'react';
+import { Amplify } from "aws-amplify";
+import { generateClient } from "aws-amplify/data";
+import outputs from "../../../amplify_outputs.json";
 
 // project imports
+import ProtectedRoute from './ProtectedRoute'
 import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
@@ -19,20 +23,37 @@ const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
 
 // ==============================|| MAIN ROUTING ||============================== //
 
+Amplify.configure(outputs);
+const client = generateClient({
+  authMode: "userPool",
+});
+
 const MainRoutes = {
   path: '/',
-  element: <MainLayout />,
+  element: (
+    <ProtectedRoute>
+      <MainLayout />
+    </ProtectedRoute>
+  ),
   children: [
     {
       path: '/',
-      element: <DashboardDefault />
+      element: (
+        <ProtectedRoute>
+          <DashboardDefault />
+        </ProtectedRoute>
+      )
     },
     {
       path: 'account',
       children: [
         {
           path: 'default',
-          element: <DashboardDefault />
+          element: (
+            <ProtectedRoute>
+              <DashboardDefault />
+            </ProtectedRoute>
+          )
         }
       ]
     },
@@ -41,7 +62,11 @@ const MainRoutes = {
       children: [
         {
           path: 'account-insights',
-          element: <UtilsColor />
+          element: (
+            <ProtectedRoute>
+              <UtilsColor />
+            </ProtectedRoute>
+          )
         }
       ]
     },
@@ -50,17 +75,29 @@ const MainRoutes = {
       children: [
         {
           path: 'account-tasks',
-          element: <UtilsShadow />
+          element: (
+            <ProtectedRoute>
+              <UtilsShadow />
+            </ProtectedRoute>
+          )
         }
       ]
     },
     {
       path: 'integrations',
-      element: <IntegrationsPage />
+      element: (
+        <ProtectedRoute>
+          <IntegrationsPage />
+        </ProtectedRoute>
+      )
     },
     {
       path: 'settings-page',
-      element: <SettingsPage />
+      element: (
+        <ProtectedRoute>
+          <SettingsPage />
+        </ProtectedRoute>
+      )
     }
   ]
 };
