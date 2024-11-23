@@ -17,7 +17,7 @@
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
-    "aws-amplify": "^6.6.4",
+    "@aws-amplify/ui-react": "^6.7.0",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
@@ -33,6 +33,7 @@
     "@tabler/icons-react": "^2.47.0",
     "@vitejs/plugin-react": "^4.2.1",
     "apexcharts": "^3.46.2",
+    "aws-amplify": "^6.6.4",
     "env-cmd": "^10.1.0",
     "formik": "^2.4.5",
     "framer-motion": "^11.0.6",
