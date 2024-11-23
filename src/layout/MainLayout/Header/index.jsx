@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useNavigate } from 'react-router-dom';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -13,10 +14,19 @@ import LogoSection from '../LogoSection';
 // assets
 import { IconMenu2 } from '@tabler/icons-react';
 
+// amplify
+import { signOut } from 'aws-amplify/auth';
+
 // ==============================|| MAIN NAVBAR / HEADER ||============================== //
 
 const Header = ({ handleLeftDrawerToggle }) => {
   const theme = useTheme();
+  const navigate = useNavigate();
+
+  async function handleSignOut() {
+    await signOut();
+    navigate('/pages/login');
+  }
 
   return (
     <>
@@ -58,7 +68,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
       <Box sx={{ flexGrow: 1 }} />
 
       {/* notification & profile */}
-      <Button>Sign Out</Button>
+      <Button onClick={handleSignOut}>Sign Out</Button>
     </>
   );
 };

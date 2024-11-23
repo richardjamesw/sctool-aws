@@ -1,10 +1,10 @@
 import { lazy } from 'react';
 
 import ProtectedRoute from './ProtectedRoute';
-import MainLayout from 'layout/MainLayout';
 import Loadable from 'ui-component/Loadable';
 
 // routes
+const MainLayout = Loadable(lazy(() => import('layout/MainLayout')));
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
 const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
