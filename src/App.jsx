@@ -1,22 +1,33 @@
-import "@aws-amplify/ui-react/styles.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import LayoutPage from "./views/LayoutPage";
-import LandingPage from "./views/landing/LandingPage";
-import AccountPage from "./views/account/AccountPage";
-import NoPage from "./views/NoPage";
-import SettingsView from "./views/account/SettingsView";
+import { useSelector } from 'react-redux';
+import { RouterProvider } from 'react-router-dom';
 
-export default function App() {
+import { ThemeProvider } from '@mui/material/styles';
+import { CssBaseline, StyledEngineProvider } from '@mui/material';
+
+// routing
+import router from 'routes';
+
+// defaultTheme
+import themes from 'themes';
+
+// project imports
+import NavigationScroll from 'layout/NavigationScroll';
+
+// ==============================|| APP ||============================== //
+
+const App = () => {
+  const customization = useSelector((state) => state.customization);
+
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<LayoutPage />}>
-          <Route index element={<LandingPage />} />
-          <Route exact path="account" element={<AccountPage />} />
-          <Route exact path="settings" element={<SettingsView />} />
-          <Route exact path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={themes(customization)}>
+        <CssBaseline />
+        <NavigationScroll>
+          <RouterProvider router={router} />
+        </NavigationScroll>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
-}
+};
+
+export default App;
