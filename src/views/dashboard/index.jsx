@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 // material-ui
 import Grid from '@mui/material/Grid';
@@ -18,11 +19,33 @@ import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
+//TODO: get current users URL and API Key
+const client = axios.create({
+  baseURL: 'https://sduplessis12312.api-us1.com/api/3/'
+});
+
 const Dashboard = () => {
   const [isLoading, setLoading] = useState(true);
+  const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    setLoading(false);
+    const fetchContacts = async () => {
+      try {
+        let response = await client.get('contacts', {
+          headers: {
+            'Api-Token': '2e816a5d87518f84abb715eed5698e126d0c6c5617a2d1bb277cc45e2e10cd983dac276b'
+          }
+        });
+        setContacts(response.data);
+      } catch (err) {
+        console.log(error);
+      }
+    };
+
+    fetchContacts().then(() => {
+      setLoading(false);
+    });
+    
   }, []);
 
   return (

@@ -6,12 +6,12 @@ import Stack from '@mui/material/Stack';
 // ==============================|| FOOTER - AUTHENTICATION 2 & 3 ||============================== //
 
 const AuthFooter = () => (
-  <Stack direction="row" justifyContent="space-between">
-    <Typography variant="subtitle2" component={Link} href="https://berrydashboard.io" target="_blank" underline="hover">
-      berrydashboard.io
+  <Stack height="80px" alignItems="center" direction="row" justifyContent="space-between">
+    <Typography variant="subtitle2" component={Link} href="https://brightlens.io" target="_blank" underline="hover">
+      brightlens.io
     </Typography>
-    <Typography variant="subtitle2" component={Link} href="https://codedthemes.com" target="_blank" underline="hover">
-      &copy; codedthemes.com
+    <Typography variant="subtitle2" target="_blank" underline="hover">
+      &copy; Copyright Brightlens Co. 2024
     </Typography>
   </Stack>
 );
