@@ -35,8 +35,10 @@ const Dashboard = () => {
         let response = await client.get('contacts', {
           headers: {
             'Api-Token': '2e816a5d87518f84abb715eed5698e126d0c6c5617a2d1bb277cc45e2e10cd983dac276b',
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Headers': 'Content-Type,Api-Token,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
             'Access-Control-Allow-Origin': '*',
-            'Content-Type': 'application/json'
+            'Access-Control-Allow-Methods': '*'
           }
         });
         setContacts(response.data);
