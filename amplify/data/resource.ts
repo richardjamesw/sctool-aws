@@ -29,7 +29,8 @@ const schema = a.schema({
   acGetContacts: a
     .query()
     .returns(a.string())
-    .handler(a.handler.function(acGetContacts)),
+    .handler(a.handler.function(acGetContacts).async())
+    .authorization((allow) => [allow.authenticated()]),
 });
 
 export type Schema = ClientSchema<typeof schema>;
