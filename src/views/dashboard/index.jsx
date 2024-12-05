@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-
+import { gridSpacing } from 'store/constant';
+import { generateClient } from 'aws-amplify/data';
 // material-ui
 import Grid from '@mui/material/Grid';
-
+import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
 // project imports
 import EarningCard from './EarningCard';
 import ContactsListCard from './ContactsListCard';
@@ -12,18 +12,11 @@ import TotalIncomeDarkCard from './TotalIncomeDarkCard';
 import TotalIncomeLightCard from './TotalIncomeLightCard';
 import TotalGrowthBarChart from './TotalGrowthBarChart';
 
-import { gridSpacing } from 'store/constant';
-
-// assets
-import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
+const client = generateClient({
+  authMode: 'userPool'
+});
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
-
-//TODO: get current users URL and API Key
-const client = axios.create({
-  baseURL: 'https://sduplessis12312.api-us1.com/api/3/',
-  withCredentials: false
-});
 
 const Dashboard = () => {
   const [isLoading, setLoading] = useState(true);
@@ -32,15 +25,8 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        let response = await client.get('contacts', {
-          headers: {
-            'Api-Token': '2e816a5d87518f84abb715eed5698e126d0c6c5617a2d1bb277cc45e2e10cd983dac276b',
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Headers': 'Content-Type,Api-Token,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Methods': '*'
-          }
-        });
+        let q = client.queries;
+        let response = q.acGetContacts();
         setContacts(response.data);
       } catch (err) {
         console.log(err);

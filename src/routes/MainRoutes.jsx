@@ -11,7 +11,6 @@ const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
 const IntegrationsPage = Loadable(lazy(() => import('views/other/IntegrationsPage')));
 const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
 
-
 // ==============================|| MAIN ROUTING ||============================== //
 const MainRoutes = {
   path: '/',
