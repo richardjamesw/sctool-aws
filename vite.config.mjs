@@ -14,6 +14,9 @@ export default defineConfig({
     global: 'window'
   },
   resolve: {
+    alias: {
+      './runtimeConfig': './runtimeConfig.browser'
+    }
     // alias: [
     //   {
     //     find: /^~(.+)/,
