@@ -1,4 +1,5 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
+import { postConfirmation } from '../auth/post-confirmation/resource';
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -7,16 +8,17 @@ specifies that any unauthenticated user can "create", "read", "update",
 and "delete" any "Todo" records.
 =========================================================================*/
 const schema = a.schema({
-  Users: a
+  UserProfile: a
     .model({
+      email: a.string().required(),
+      profileOwner: a.string(),
       fName: a.string(),
       lName: a.string(),
-      email: a.string().required(),
       company: a.string(),
       joinedDateTime: a.datetime(),
       role: a.enum(['Admin', 'ClientManager', 'Client'])
     })
-    .authorization((allow) => [allow.owner()]),
+    .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
   Contacts: a
     .model({
       fName: a.string(),
@@ -24,15 +26,19 @@ const schema = a.schema({
       email: a.string(),
       associatedUser: a.string()
     })
-    .authorization((allow) => [allow.owner()])
-});
+    .authorization((allow) => [allow.guest()])
+})
+.authorization((allow) => [allow.ownerDefinedIn('profileOwner')]);
 
 export type Schema = ClientSchema<typeof schema>;
 
 export const data = defineData({
   schema,
   authorizationModes: {
-    defaultAuthorizationMode: 'userPool'
+    defaultAuthorizationMode: 'apiKey',
+    apiKeyAuthorizationMode: {
+      expiresInDays: 30
+    }
   }
 });
 
