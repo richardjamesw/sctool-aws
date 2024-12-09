@@ -34,7 +34,7 @@
     "@tabler/icons-react": "^2.47.0",
     "@vitejs/plugin-react": "^4.2.1",
     "apexcharts": "^3.46.2",
-    "aws-amplify": "^6.6.4",
+    "aws-amplify": "^6.10.2",
     "aws-lambda": "^1.0.7",
     "axios": "^1.7.7",
     "env-cmd": "^10.1.0",
@@ -80,8 +80,8 @@
     ]
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.8.0",
-    "@aws-amplify/backend-cli": "^1.4.2",
+    "@aws-amplify/backend": "^1.9.0",
+    "@aws-amplify/backend-cli": "^1.4.3",
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
