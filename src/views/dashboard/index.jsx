@@ -24,7 +24,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const data = await client.models.UserProfile.list();
+        const data = await client.queries.LoadContacts();
         console.log(data);
         //setContacts(data);
       } catch (err) {

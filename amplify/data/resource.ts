@@ -1,5 +1,6 @@
 import { type ClientSchema, a, defineData } from '@aws-amplify/backend';
 import { postConfirmation } from '../auth/post-confirmation/resource';
+import { loadContacts } from '../functions/acLoadContacts/resource';
 
 /*== STEP 1 ===============================================================
 The section below creates a Todo database table with a "content" field. Try
@@ -7,29 +8,35 @@ adding a new "isDone" field as a boolean. The authorization rule below
 specifies that any unauthenticated user can "create", "read", "update", 
 and "delete" any "Todo" records.
 =========================================================================*/
-const schema = a.schema({
-  UserProfile: a
-    .model({
-      email: a.string().required(),
-      profileOwner: a.string(),
-      fName: a.string(),
-      lName: a.string(),
-      company: a.string(),
-      joinedDateTime: a.datetime(),
-      role: a.enum(['Admin', 'ClientManager', 'Client']),
-      acUrl: a.string()
-    })
-    .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
-  Contacts: a
-    .model({
-      fName: a.string(),
-      lName: a.string(),
-      email: a.string(),
-      associatedUser: a.string()
-    })
-    .authorization((allow) => [allow.ownerDefinedIn('profileOwner')])
-})
-.authorization((allow) => [allow.resource(postConfirmation)]);
+const schema = a
+  .schema({
+    UserProfile: a
+      .model({
+        email: a.string().required(),
+        profileOwner: a.string(),
+        fName: a.string(),
+        lName: a.string(),
+        company: a.string(),
+        joinedDateTime: a.datetime(),
+        role: a.enum(['Admin', 'ClientManager', 'Client']),
+        acUrl: a.string()
+      })
+      .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
+    Contacts: a
+      .model({
+        fName: a.string(),
+        lName: a.string(),
+        email: a.string(),
+        associatedUser: a.string()
+      })
+      .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
+    LoadContacts: a
+      .query()
+      .returns(a.string())
+      .handler(a.handler.function(loadContacts))
+      .authorization((allow) => [allow.authenticated()])
+  })
+  .authorization((allow) => [allow.resource(postConfirmation)]);
 
 export type Schema = ClientSchema<typeof schema>;
 
