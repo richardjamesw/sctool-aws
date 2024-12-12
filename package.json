@@ -18,6 +18,7 @@
     "prettier": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\""
   },
   "dependencies": {
+    "@aws-amplify/api": "^6.1.7",
     "@aws-amplify/ui-react": "^6.7.0",
     "@emotion/cache": "^11.11.0",
     "@emotion/react": "^11.11.3",
@@ -34,7 +35,7 @@
     "@tabler/icons-react": "^2.47.0",
     "@vitejs/plugin-react": "^4.2.1",
     "apexcharts": "^3.46.2",
-    "aws-amplify": "^6.6.4",
+    "aws-amplify": "^6.10.2",
     "aws-lambda": "^1.0.7",
     "axios": "^1.7.7",
     "env-cmd": "^10.1.0",
@@ -80,11 +81,12 @@
     ]
   },
   "devDependencies": {
-    "@aws-amplify/backend": "^1.8.0",
-    "@aws-amplify/backend-cli": "^1.4.2",
+    "@aws-amplify/backend": "^1.9.0",
+    "@aws-amplify/backend-cli": "^1.4.3",
     "@babel/core": "^7.23.9",
     "@babel/eslint-parser": "^7.23.10",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@types/aws-lambda": "^8.10.146",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-config-react-app": "^7.0.1",
@@ -97,6 +99,7 @@
     "immutable": "^4.3.5",
     "prettier": "^3.2.5",
     "react-error-overlay": "6.0.11",
-    "sass": "^1.71.1"
+    "sass": "^1.71.1",
+    "typescript": "^5.7.2"
   }
 }

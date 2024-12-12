@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { gridSpacing } from 'store/constant';
-import { generateClient } from 'aws-amplify/data';
+//import { genClient } from '../../../amplify/data/resource';
+import { generateClient } from '@aws-amplify/api';
 // material-ui
 import Grid from '@mui/material/Grid';
 import StorefrontTwoToneIcon from '@mui/icons-material/StorefrontTwoTone';
@@ -12,9 +13,7 @@ import TotalIncomeDarkCard from './TotalIncomeDarkCard';
 import TotalIncomeLightCard from './TotalIncomeLightCard';
 import TotalGrowthBarChart from './TotalGrowthBarChart';
 
-const client = generateClient({
-  authMode: 'userPool'
-});
+const client = generateClient();
 
 // ==============================|| DEFAULT DASHBOARD ||============================== //
 
@@ -25,9 +24,9 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const data = await client.models.Users.list();
-        console.log(data);
-        //setContacts(data);
+        const res = await client.queries.LoadContacts();
+        console.log(res.data);
+        setContacts(JSON.parse(res.data).contacts);
       } catch (err) {
         console.log(err);
       }
