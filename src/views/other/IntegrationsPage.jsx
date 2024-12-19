@@ -93,7 +93,18 @@ const IntegrationsPage = () => {
         <DialogTitle>Active Campaign</DialogTitle>
         <DialogContent>
           <DialogContentText>Enter your Active Campaign information to synchronize.</DialogContentText>
-          <TextField autoFocus required margin="dense" id="name" name="url" label="Site URL" type="url" fullWidth variant="standard" />
+          <TextField
+            autoFocus
+            required
+            margin="dense"
+            id="name"
+            name="url"
+            label="Site URL"
+            placeholder="https://example0123.api-us1.com/api/3"
+            type="url"
+            fullWidth
+            variant="standard"
+          />
           <TextField autoFocus required margin="dense" id="name" name="key" label="Api Key" type="text" fullWidth variant="standard" />
         </DialogContent>
         <DialogActions>
