@@ -1,10 +1,8 @@
 import type { Handler } from 'aws-lambda';
-import { getAmplifyDataClientConfig } from '@aws-amplify/backend/function/runtime';
 import { Amplify } from 'aws-amplify';
 import outputs from '../../../amplify_outputs.json';
 import { type Schema } from '../../data/resource';
 import { generateClient } from 'aws-amplify/data';
-import { env } from '$amplify/env/post-confirmation';
 import axios from 'axios';
 
 Amplify.configure(outputs);
