@@ -19,8 +19,7 @@ const schema = a
         company: a.string(),
         joinedDateTime: a.datetime(),
         role: a.enum(['Admin', 'ClientManager', 'Client']),
-        acUrl: a.string(),
-        acKey: a.string()
+        acUrl: a.string()
       })
       .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
     Contacts: a

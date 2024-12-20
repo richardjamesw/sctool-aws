@@ -37,6 +37,7 @@ const ContactsListCard = ({ isLoading, contacts }) => {
 
   const contactItems = contacts ? (
     contacts.map((contact) => {
+      console.log(contact.email);
       return <ContactCard key={contact.id} item={contact} />;
     })
   ) : (

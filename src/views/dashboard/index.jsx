@@ -25,7 +25,7 @@ const Dashboard = () => {
     const fetchContacts = async () => {
       try {
         const res = await client.queries.LoadContacts();
-        if (res.errors) throw res.errors;
+        console.log(res.data);
         setContacts(JSON.parse(res.data).contacts);
       } catch (err) {
         console.log(err);

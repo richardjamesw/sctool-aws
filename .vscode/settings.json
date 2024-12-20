@@ -1,4 +1,3 @@
 {
-    "aws.telemetry": false,
-    "amazonQ.telemetry": false
+    "aws.telemetry": false
 }
