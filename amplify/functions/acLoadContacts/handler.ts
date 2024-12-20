@@ -5,7 +5,7 @@ import { generateClient } from 'aws-amplify/data';
 import outputs from '../../../amplify_outputs.json';
 import type { Handler } from 'aws-lambda';
 
-Amplify.configure(outputs);
+//Amplify.configure(outputs);
 
 export const handler: Handler = async (event, context) => {
   //const jwt = event.request.headers['authorization'];
