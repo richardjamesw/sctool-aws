@@ -2,7 +2,7 @@ import axios from 'axios';
 import { type Schema } from '../../data/resource';
 import { Amplify } from 'aws-amplify';
 import { generateClient } from 'aws-amplify/data';
-import outputs from '../../../amplify_outputs.json';
+//import outputs from '../../../amplify_outputs.json';
 import type { Handler } from 'aws-lambda';
 
 //Amplify.configure(outputs);
