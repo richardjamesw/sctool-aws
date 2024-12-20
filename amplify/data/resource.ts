@@ -37,7 +37,7 @@ const schema = a
       .handler(a.handler.function(loadContacts))
       .authorization((allow) => [allow.authenticated()])
   })
-  .authorization((allow) => [allow.resource(postConfirmation)]);
+  .authorization((allow) => [allow.resource(postConfirmation), allow.resource(loadContacts)]);
 
 export type Schema = ClientSchema<typeof schema>;
 
