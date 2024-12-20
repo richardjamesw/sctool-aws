@@ -8,12 +8,12 @@ import type { Handler } from 'aws-lambda';
 Amplify.configure(outputs);
 
 export const handler: Handler = async (event, context) => {
-  const jwt = event.request.headers['authorization'];
+  //const jwt = event.request.headers['authorization'];
   
-  const client = generateClient<Schema>({
-    authMode: 'identityPool',
-    authToken: jwt
-  });
+  //const client = generateClient<Schema>({
+  //  authMode: 'identityPool',
+  //  authToken: jwt
+  //});
   //const users = await client.models.UserProfile.list(); // todo confirm profileOwner matches? test if other users are coming in or just the one?
   //const prof = users.data[0];
   // pull data from AC with user's URL and Key
