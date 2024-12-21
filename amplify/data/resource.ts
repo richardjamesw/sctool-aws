@@ -19,7 +19,8 @@ const schema = a
         company: a.string(),
         joinedDateTime: a.datetime(),
         role: a.enum(['Admin', 'ClientManager', 'Client']),
-        acUrl: a.string()
+        acUrl: a.string(),
+        acKey: a.string()
       })
       .authorization((allow) => [allow.ownerDefinedIn('profileOwner')]),
     Contacts: a
@@ -36,7 +37,7 @@ const schema = a
       .handler(a.handler.function(loadContacts))
       .authorization((allow) => [allow.authenticated()])
   })
-  .authorization((allow) => [allow.resource(postConfirmation)]);
+  .authorization((allow) => [allow.resource(postConfirmation), allow.resource(loadContacts)]);
 
 export type Schema = ClientSchema<typeof schema>;
 
