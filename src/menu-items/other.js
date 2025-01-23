@@ -8,19 +8,19 @@ const other = {
   type: 'group',
   children: [
     {
-      id: 'integrations',
-      title: 'Integrations',
-      type: 'item',
-      url: '/integrations',
-      icon: IconAffiliate,
-      breadcrumbs: false
-    },
-    {
       id: 'settings-page',
       title: 'Settings',
       type: 'item',
-      url: '/settings-page',
+      url: '/settings',
       icon: IconSettings,
+      breadcrumbs: false
+    },
+    {
+      id: 'integrations',
+      title: 'Integrations',
+      type: 'item',
+      url: '/settings/integrations',
+      icon: IconAffiliate,
       breadcrumbs: false
     },
     {

@@ -13,7 +13,7 @@ export function ProtectedRoute({ children }) {
       .then(() => setIsAuth(true))
       .catch((err) => {
         console.log('User not logged in.\n' + err);
-        navigate('/pages/login');
+        navigate('/auth');
       });
   }, []);
   return isAuth && children;

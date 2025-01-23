@@ -1,6 +1,6 @@
 import { Authenticator } from '@aws-amplify/ui-react';
 import { Amplify } from 'aws-amplify';
-import outputs from '../../../../../amplify_outputs.json';
+import outputs from '../../../../amplify_outputs.json';
 import { useNavigate } from 'react-router-dom';
 import { Typography, Box } from '@mui/material';
 import AuthFooter from 'ui-component/cards/AuthFooter';
@@ -26,7 +26,7 @@ const Login = () => {
 
   return (
     <Box>
-      <Authenticator components={authComponents}>{() => navigate('/')}</Authenticator>
+      <Authenticator components={authComponents}>{() => navigate('/account')}</Authenticator>
     </Box>
   );
 };

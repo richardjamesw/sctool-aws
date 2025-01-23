@@ -19,7 +19,7 @@ const account = {
       id: 'account-dashboard',
       title: 'Dashboard',
       type: 'item',
-      url: '/',
+      url: '/account',
       icon: icons.IconDashboard,
       breadcrumbs: false
     },
@@ -27,7 +27,7 @@ const account = {
       id: 'account-insights',
       title: 'Insights',
       type: 'item',
-      url: '/account/account-insights',
+      url: '/account/insights',
       icon: icons.IconAnalyze,
       breadcrumbs: false
     },
@@ -35,7 +35,7 @@ const account = {
       id: 'account-tasks',
       title: 'Tasks',
       type: 'item',
-      url: '/account/account-tasks',
+      url: '/account/tasks',
       icon: icons.IconTallymarks,
       breadcrumbs: false
     }

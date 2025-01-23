@@ -5,22 +5,22 @@ import Loadable from 'ui-component/Loadable';
 import MinimalLayout from 'layout/MinimalLayout';
 
 // login option 3 routing
-const AuthLogin = Loadable(lazy(() => import('views/pages/authentication/auth-forms/AuthLogin')));
-const AuthRegister3 = Loadable(lazy(() => import('views/pages/authentication3/Register3')));
+const AuthLogin = Loadable(lazy(() => import('views/pages/authentication/AuthLogin')));
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
+// Use layout for when user is not logged in or at welcome page
 
 const AuthenticationRoutes = {
   path: '/',
   element: <MinimalLayout />,
   children: [
     {
-      path: '/pages/login',
+      index: true,
       element: <AuthLogin />
     },
     {
-      path: '/pages/register',
-      element: <AuthRegister3 />
+      path: 'auth',
+      element: <AuthLogin />
     }
   ]
 };

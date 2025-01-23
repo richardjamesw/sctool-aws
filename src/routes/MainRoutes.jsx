@@ -11,7 +11,9 @@ const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
 const IntegrationsPage = Loadable(lazy(() => import('views/other/IntegrationsPage')));
 const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
 
-// ==============================|| MAIN ROUTING ||============================== //
+// ==============================|| MAIN ROUTING (user is logged in) ||============================== //
+// These should all be ProtectedRoutes
+
 const MainRoutes = {
   path: '/',
   element: (
@@ -21,67 +23,34 @@ const MainRoutes = {
   ),
   children: [
     {
-      path: '/',
-      element: (
-        <ProtectedRoute>
-          <DashboardDefault />
-        </ProtectedRoute>
-      )
-    },
-    {
       path: 'account',
       children: [
         {
-          path: 'default',
-          element: (
-            <ProtectedRoute>
-              <DashboardDefault />
-            </ProtectedRoute>
-          )
+          index: true,
+          element: <DashboardDefault />
+        },
+        {
+          path: 'insights',
+          element: <UtilsColor />
+        },
+        {
+          path: 'tasks',
+          element: <UtilsShadow />
         }
       ]
     },
     {
-      path: 'account',
+      path: 'settings',
       children: [
         {
-          path: 'account-insights',
-          element: (
-            <ProtectedRoute>
-              <UtilsColor />
-            </ProtectedRoute>
-          )
-        }
-      ]
-    },
-    {
-      path: 'account',
-      children: [
+          index: true,
+          element: <SettingsPage />
+        },
         {
-          path: 'account-tasks',
-          element: (
-            <ProtectedRoute>
-              <UtilsShadow />
-            </ProtectedRoute>
-          )
+          path: 'integrations',
+          element: <IntegrationsPage />
         }
       ]
-    },
-    {
-      path: 'integrations',
-      element: (
-        <ProtectedRoute>
-          <IntegrationsPage />
-        </ProtectedRoute>
-      )
-    },
-    {
-      path: 'settings-page',
-      element: (
-        <ProtectedRoute>
-          <SettingsPage />
-        </ProtectedRoute>
-      )
     }
   ]
 };
