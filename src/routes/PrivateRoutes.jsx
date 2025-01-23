@@ -14,7 +14,7 @@ const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
 // ==============================|| MAIN ROUTING (user is logged in) ||============================== //
 // These should all be ProtectedRoutes
 
-const MainRoutes = {
+const PrivateRoutes = {
   path: '/',
   element: (
     <ProtectedRoute>
@@ -55,4 +55,4 @@ const MainRoutes = {
   ]
 };
 
-export default MainRoutes;
+export default PrivateRoutes;
