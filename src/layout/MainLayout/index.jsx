@@ -10,6 +10,8 @@ import { CssBaseline, styled, useTheme } from '@mui/material';
 
 // project imports
 import Header from './Header';
+import Footer from 'layout/Footer/MainFooter';
+import footerRoutes from 'routes/FooterRoutes';
 import Sidebar from './Sidebar';
 import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
 import { SET_MENU } from 'store/actions';
@@ -91,6 +93,8 @@ const MainLayout = () => {
         <Breadcrumbs separator={IconChevronRight} icon title rightAlign />
         <Outlet />
       </Main>
+
+      <Footer content={footerRoutes} />
     </Box>
   );
 };

@@ -6,6 +6,7 @@ import MinimalLayout from 'layout/MinimalLayout';
 
 // login option 3 routing
 const AuthLogin = Loadable(lazy(() => import('views/pages/authentication/AuthLogin')));
+const LandingPage = Loadable(lazy(() => import('views/pages/landing/LandingPage')));
 
 // ==============================|| AUTHENTICATION ROUTING ||============================== //
 // Use layout for when user is not logged in or at welcome page
@@ -16,7 +17,7 @@ const PublicRoutes = {
   children: [
     {
       index: true,
-      element: <AuthLogin />
+      element: <LandingPage />
     },
     {
       path: 'auth',

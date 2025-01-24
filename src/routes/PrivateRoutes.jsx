@@ -8,8 +8,8 @@ const MainLayout = Loadable(lazy(() => import('layout/MainLayout')));
 const DashboardDefault = Loadable(lazy(() => import('views/dashboard')));
 const UtilsColor = Loadable(lazy(() => import('views/utilities/Color')));
 const UtilsShadow = Loadable(lazy(() => import('views/utilities/Shadow')));
-const IntegrationsPage = Loadable(lazy(() => import('views/other/IntegrationsPage')));
-const SettingsPage = Loadable(lazy(() => import('views/other/SettingsPage')));
+const IntegrationsPage = Loadable(lazy(() => import('views/settings/IntegrationsPage')));
+const SettingsPage = Loadable(lazy(() => import('views/settings/SettingsPage')));
 
 // ==============================|| MAIN ROUTING (user is logged in) ||============================== //
 // These should all be ProtectedRoutes

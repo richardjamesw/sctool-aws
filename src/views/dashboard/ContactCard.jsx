@@ -1,9 +1,12 @@
 import Avatar from '@mui/material/Avatar';
 import Divider from '@mui/material/Divider';
-import { Typography, Grid } from '@mui/material';
-import '@aws-amplify/ui-react/styles.css';
-import SubCard from 'ui-component/cards/SubCard';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
 import ContactIcon from '@mui/icons-material/AccountCircle';
+
+import SubCard from 'ui-component/cards/SubCard';
+
+import '@aws-amplify/ui-react/styles.css';
 
 export default function ContactCard(props) {
   const contact = props.item;
