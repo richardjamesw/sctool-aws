@@ -522,7 +522,7 @@ function MainNavBar({ brand, routes, transparent, light, action, sticky, relativ
 
 // Setting default values for the props of DefaultNavbar
 MainNavBar.defaultProps = {
-  brand: 'Material Kit 2',
+  brand: 'brightLens.io',
   transparent: false,
   light: false,
   action: false,
