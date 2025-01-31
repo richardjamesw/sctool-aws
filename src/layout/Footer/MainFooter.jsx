@@ -10,7 +10,7 @@ function DefaultFooter({ content }) {
   const { brand, socials, menus, copyright } = content;
 
   return (
-    <Box component="footer">
+    <Box component="footer" sx={{ m: 5 }}>
       <Container>
         <Grid container spacing={3}>
           <Grid item xs={12} md={3} sx={{ ml: 'auto', mb: 3 }}>

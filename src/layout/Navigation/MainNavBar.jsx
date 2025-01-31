@@ -164,8 +164,8 @@ function MainNavBar({ brand, routes, transparent, light, action, sticky, relativ
                           transition: 'all 300ms linear',
 
                           '&:hover': {
-                            backgroundColor: theme.palette.primary.dark,
-                            color: theme.palette.secondary.dark
+                            backgroundColor: theme.palette.primary.light,
+                            color: theme.palette.secondary.light
                           }
                         }}
                       >

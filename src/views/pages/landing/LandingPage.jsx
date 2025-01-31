@@ -6,7 +6,6 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 //import MKSocialButton from 'components/MKSocialButton';
 
-import MainNavBar from 'layout/Navigation/MainNavBar';
 //import FilledInfoCard from 'examples/Cards/InfoCards/FilledInfoCard';
 
 // Presentation page sections
@@ -18,9 +17,6 @@ import DocumentationCard from './DocumentationCard';
 import Testimonials from './Testimonials';
 //import Download from 'pages/Presentation/sections/Download';
 
-// Routes
-import routes from 'routes/MainNavRoutes';
-
 // Images
 import imgBg from 'assets/images/pres-bg.jpg';
 
@@ -28,16 +24,6 @@ function LandingPage() {
   const theme = useTheme();
   return (
     <>
-      <MainNavBar
-        routes={routes}
-        action={{
-          type: 'internal',
-          route: '/auth',
-          label: 'sign in',
-          color: 'info'
-        }}
-        sticky
-      />
       <Box
         minHeight="75vh"
         width="100%"
@@ -53,7 +39,7 @@ function LandingPage() {
           <Grid container item xs={12} lg={7} justifyContent="center" mx="auto">
             <Typography
               variant="h1"
-              color="white"
+              color="black"
               mt={-6}
               mb={1}
               sx={({ breakpoints }) => ({
@@ -64,8 +50,8 @@ function LandingPage() {
             >
               Bright Lens SCT{' '}
             </Typography>
-            <Typography variant="body1" color="white" textAlign="center" px={{ xs: 6, lg: 12 }} mt={1}>
-              Open your eyes. &amp; BL. Join over 1.6 million sales consultants.
+            <Typography variant="body1" color="black" textAlign="center" px={{ xs: 6, lg: 12 }} mt={1}>
+              Open your eyes. Join over 1.6 million sales consultants.
             </Typography>
           </Grid>
         </Container>
@@ -77,7 +63,7 @@ function LandingPage() {
           mt: -8,
           mb: 4,
           //backgroundColor: ({ palette: { white }, functions: { rgba } }) => rgba((white.main, 0.8, 0, 0)),
-          backgroundColor: theme.palette.primary.dark,
+          backgroundColor: theme.palette.primary.light,
           backdropFilter: 'saturate(200%) blur(30px)',
           //boxShadow: ({ boxShadows: { xxl } }) => xxl
           boxShadow: theme.shadows[16]
