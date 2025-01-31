@@ -3,12 +3,10 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import Collapse from '@mui/material/Collapse';
-import Icon from '@mui/material/Icon';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { IconKeyboard } from '@tabler/icons-react';
 
-function MainNavBarDropdown({ name, icon, children, collapseStatus, light, href, route, collapse, ...rest }) {
+function MainNavBarDropdown({ name, icon, children, collapseStatus, light, href, route, ...rest }) {
   const linkComponent = {
     component: 'a',
     href,

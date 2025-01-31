@@ -8,7 +8,7 @@ import imgBg from 'assets/images/pres-bg.jpg';
 
 Amplify.configure(outputs);
 
-const Login = () => {
+const AuthLogin = () => {
   const navigate = useNavigate();
 
   return (
@@ -28,4 +28,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AuthLogin;
