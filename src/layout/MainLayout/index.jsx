@@ -10,6 +10,8 @@ import { CssBaseline, styled, useTheme } from '@mui/material';
 
 // project imports
 import Header from './Header';
+import Footer from 'layout/Footer/MainFooter';
+import footerRoutes from 'routes/FooterRoutes';
 import Sidebar from './Sidebar';
 import Breadcrumbs from 'ui-component/extended/Breadcrumbs';
 import { SET_MENU } from 'store/actions';
@@ -64,34 +66,37 @@ const MainLayout = () => {
   };
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      {/* header */}
-      <AppBar
-        enableColorOnDark
-        position="fixed"
-        color="inherit"
-        elevation={0}
-        sx={{
-          bgcolor: theme.palette.background.default,
-          transition: leftDrawerOpened ? theme.transitions.create('width') : 'none'
-        }}
-      >
-        <Toolbar>
-          <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
-        </Toolbar>
-      </AppBar>
+    <>
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        {/* header */}
+        <AppBar
+          enableColorOnDark
+          position="fixed"
+          color="inherit"
+          elevation={0}
+          sx={{
+            bgcolor: theme.palette.background.default,
+            transition: leftDrawerOpened ? theme.transitions.create('width') : 'none'
+          }}
+        >
+          <Toolbar>
+            <Header handleLeftDrawerToggle={handleLeftDrawerToggle} />
+          </Toolbar>
+        </AppBar>
 
-      {/* drawer */}
-      <Sidebar drawerOpen={!matchDownMd ? leftDrawerOpened : !leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} />
+        {/* drawer */}
+        <Sidebar drawerOpen={!matchDownMd ? leftDrawerOpened : !leftDrawerOpened} drawerToggle={handleLeftDrawerToggle} />
 
-      {/* main content */}
-      <Main theme={theme} open={leftDrawerOpened}>
-        {/* breadcrumb */}
-        <Breadcrumbs separator={IconChevronRight} icon title rightAlign />
-        <Outlet />
-      </Main>
-    </Box>
+        {/* main content */}
+        <Main theme={theme} open={leftDrawerOpened}>
+          {/* breadcrumb */}
+          <Breadcrumbs separator={IconChevronRight} icon title rightAlign />
+          <Outlet />
+        </Main>
+      </Box>
+      <Footer content={footerRoutes} />
+    </>
   );
 };
 

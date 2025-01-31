@@ -25,7 +25,7 @@ const Header = ({ handleLeftDrawerToggle }) => {
 
   async function handleSignOut() {
     await signOut();
-    navigate('/pages/login');
+    navigate('/auth');
   }
 
   return (

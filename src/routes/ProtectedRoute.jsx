@@ -13,7 +13,10 @@ export function ProtectedRoute({ children }) {
       .then(() => setIsAuth(true))
       .catch((err) => {
         console.log('User not logged in.\n' + err);
-        navigate('/pages/login');
+        if (err.name == 'AuthUserPoolException') {
+          // TODO go to 404 ?
+        }
+        navigate('/auth');
       });
   }, []);
   return isAuth && children;

@@ -1,12 +1,11 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-// routes
-import MainRoutes from './MainRoutes';
-import LoginRoutes from './AuthenticationRoutes';
+import PublicRoutes from './PublicRoutes';
+import PrivateRoutes from './PrivateRoutes';
 
 // ==============================|| ROUTING RENDER ||============================== //
-const router = createBrowserRouter([MainRoutes, LoginRoutes], {
-  basename: '' //import.meta.env.VITE_APP_BASE_NAME
+const router = createBrowserRouter([PublicRoutes, PrivateRoutes], {
+  basename: '' // Optionally import.meta.env.VITE_APP_BASE_NAME
 });
 
 export default router;
