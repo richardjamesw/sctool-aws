@@ -3,9 +3,9 @@ Web app built with reactjs on aws.
 
 ## Setup and Run
 1. Install:
-** git
-** nodejs
-** VSCode
+- git
+- nodejs
+- VSCode
 
 2. Clone repo
 3. Open in VSCode
