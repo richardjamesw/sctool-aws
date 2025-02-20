@@ -2,24 +2,24 @@
 Web app built with reactjs on aws.
 
 ## Setup and Run
-Install:
-git
-nodejs
-VSCode
+1. Install:
+-- git
+-- nodejs
+-- VSCode
 
-Clone repo
-Open in VSCode
+2. Clone repo
+3. Open in VSCode
 
-In VSCode"
-add AWS Toolkit extension
-sign in with IAM credentials, set profile name as default
+4. In VSCode:
+- Add AWS Toolkit extension
+- Sign in with IAM credentials, set profile name as default
 
-Open terminal:
-npm install
-npx ampx sandbox
+5. Open terminal:
+- npm install
+- npx ampx sandbox
 
-Open second terminal:
-npm run start
+6. Open second terminal:
+- npm run start
 
 
 # React App Docs
