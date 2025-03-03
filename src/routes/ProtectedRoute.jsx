@@ -1,7 +1,11 @@
 /* eslint-disable react/prop-types */
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Amplify } from 'aws-amplify';
 import { getCurrentUser } from 'aws-amplify/auth';
+import outputs from '../../amplify_outputs.json';
+
+Amplify.configure(outputs);
 
 export function ProtectedRoute({ children }) {
   const navigate = useNavigate();
@@ -12,10 +16,8 @@ export function ProtectedRoute({ children }) {
     getCurrentUser()
       .then(() => setIsAuth(true))
       .catch((err) => {
-        console.log('User not logged in.\n' + err);
-        if (err.name == 'AuthUserPoolException') {
-          // TODO go to 404 ?
-        }
+        console.log('Page forbidden. User not logged in.\n' + err);
+
         navigate('/auth');
       });
   }, []);
