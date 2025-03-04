@@ -7,7 +7,6 @@
     "email": "rwallace053@gmail.com",
     "url": "https://brightlens.io/"
   },
-  "homepage": "https://brightlens.io/",
   "scripts": {
     "start": "env-cmd -f .env vite",
     "dev": "vite",
