@@ -44,7 +44,17 @@ let breakpoints = {
   }
 };
 
-function MainNavBar({ brand, routes, transparent, light, action, sticky, relative, center }) {
+const MainNavBar = ({
+  brand = 'brightLens.io',
+  routes,
+  transparent = false,
+  light = false,
+  action = false,
+  sticky = false,
+  relative = false,
+  center = false,
+  ...props
+}) => {
   const theme = useTheme();
   const [dropdown, setDropdown] = useState('');
   const [dropdownEl, setDropdownEl] = useState('');
@@ -506,7 +516,7 @@ function MainNavBar({ brand, routes, transparent, light, action, sticky, relativ
           </Box>
         </Box>
         <Box
-          bgColor={transparent ? 'white' : 'transparent'}
+          bgcolor={transparent ? 'white' : 'transparent'}
           shadow={transparent ? 'lg' : 'none'}
           borderRadius="8px"
           px={transparent ? 2 : 0}
@@ -518,20 +528,9 @@ function MainNavBar({ brand, routes, transparent, light, action, sticky, relativ
       {nestedDropdownMenu}
     </Container>
   );
-}
-
-// Setting default values for the props of DefaultNavbar
-MainNavBar.defaultProps = {
-  brand: 'brightLens.io',
-  transparent: false,
-  light: false,
-  action: false,
-  sticky: false,
-  relative: false,
-  center: false
 };
 
-// Typechecking props for the DefaultNavbar
+// Typechecking props for the MainNavBar
 MainNavBar.propTypes = {
   brand: PropTypes.string,
   routes: PropTypes.arrayOf(PropTypes.shape).isRequired,

@@ -31,7 +31,7 @@ function ExamplesBlocks() {
           alignItems="center"
           sx={{ textAlign: 'center', my: 6, mx: 'auto', px: 0.75 }}
         >
-          <Badge variant="contained" color="info" badgeContent="boost creativity" container sx={{ mb: 2 }} />
+          <Badge variant="contained" color="info" badgeContent="boost creativity" container="true" sx={{ mb: 2 }} />
           <Typography variant="h2" fontWeight="bold">
             With our coded pages
           </Typography>

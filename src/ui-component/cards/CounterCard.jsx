@@ -3,10 +3,10 @@ import CountUp from 'react-countup';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-function CounterCard({ color, count, title, description, ...rest }) {
+function CounterCard({ color = 'info', count, title = '', description = '', ...rest }) {
   return (
     <Box p={2} textAlign="center" lineHeight={1}>
-      <Typography variant="h1" color={color} textGradient>
+      <Typography variant="h1" color={color} textgradient="true">
         <CountUp end={count} duration={1} {...rest} />
       </Typography>
       {title && (
@@ -22,13 +22,6 @@ function CounterCard({ color, count, title, description, ...rest }) {
     </Box>
   );
 }
-
-// Setting default props for the DefaultCounterCard
-CounterCard.defaultProps = {
-  color: 'info',
-  description: '',
-  title: ''
-};
 
 // Typechecking props for the DefaultCounterCard
 CounterCard.propTypes = {

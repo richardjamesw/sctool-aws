@@ -4,10 +4,10 @@ import Tooltip from '@mui/material/Tooltip';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 
-function ExampleCard({ image, name, count, pro, ...rest }) {
+function ExampleCard({ image, name = '', count = 0, pro = false, ...rest }) {
   const imageTemplate = (
     <Box
-      bgColor="white"
+      bgcolor="white"
       borderRadius="8px"
       shadow="lg"
       minHeight="10rem"
@@ -74,13 +74,6 @@ function ExampleCard({ image, name, count, pro, ...rest }) {
     </Box>
   );
 }
-
-// Setting default props for the ExampleCard
-ExampleCard.defaultProps = {
-  name: '',
-  count: 0,
-  pro: false
-};
 
 // Typechecking props for the ExampleCard
 ExampleCard.propTypes = {

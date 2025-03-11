@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 
-function ReviewCard({ color, image, name, date, review, rating }) {
+function ReviewCard({ color = 'transparent', image = '', name, date, review, rating }) {
   const ratings = {
     0.5: [
       <Icon key={1}>star_outline</Icon>,
@@ -82,7 +82,7 @@ function ReviewCard({ color, image, name, date, review, rating }) {
   return (
     <Box
       variant={color === 'transparent' ? 'contained' : 'gradient'}
-      bgColor={color}
+      bgcolor={color}
       borderRadius="8px"
       shadow={color === 'transparent' ? 'none' : 'md'}
       p={3}
@@ -130,12 +130,6 @@ function ReviewCard({ color, image, name, date, review, rating }) {
     </Box>
   );
 }
-
-// Setting default values for the props of DefaultReviewCard
-ReviewCard.defaultProps = {
-  color: 'transparent',
-  image: ''
-};
 
 // Typechecking props for the DefaultReviewCard
 ReviewCard.propTypes = {

@@ -12,7 +12,7 @@ import Typography from '@mui/material/Typography';
 // ==============================|| CUSTOM SUB CARD ||============================== //
 
 const SubCard = React.forwardRef(
-  ({ children, content, contentClass, darkTitle, secondary, sx = {}, contentSX = {}, title, ...others }, ref) => {
+  ({ children, content = true, contentClass, darkTitle, secondary, sx = {}, contentSX = {}, title, ...others }, ref) => {
     const defaultShadow = '0 2px 14px 0 rgb(32 40 45 / 8%)';
 
     return (
@@ -45,10 +45,6 @@ SubCard.propTypes = {
   sx: PropTypes.object,
   contentSX: PropTypes.object,
   title: PropTypes.oneOfType([PropTypes.node, PropTypes.string, PropTypes.object])
-};
-
-SubCard.defaultProps = {
-  content: true
 };
 
 export default SubCard;

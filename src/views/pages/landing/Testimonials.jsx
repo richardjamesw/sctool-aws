@@ -17,7 +17,7 @@ function Testimonials() {
       <Container>
         <Grid container item xs={12} lg={6} justifyContent="center" sx={{ mx: 'auto', textAlign: 'center' }}>
           <Typography variant="h2">Trusted by over</Typography>
-          <Typography variant="h2" color="info" textGradient mb={2}>
+          <Typography variant="h2" color="info" textgradient="true" mb={2}>
             1,679,477+ sales engineers
           </Typography>
           <Typography variant="body1" color="text" mb={2}>

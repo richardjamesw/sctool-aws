@@ -1,12 +1,10 @@
-import PropTypes from 'prop-types';
-
 import { Link } from 'react-router-dom';
-
 import Collapse from '@mui/material/Collapse';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
 
-function MainNavBarDropdown({ name, icon, children, collapseStatus, light, href, route, ...rest }) {
+function MainNavBarDropdown({ name, icon, children = false, collapseStatus = false, light = false, href = '', route = '', collapse, ...rest }) {
   const linkComponent = {
     component: 'a',
     href,
@@ -20,7 +18,7 @@ function MainNavBarDropdown({ name, icon, children, collapseStatus, light, href,
   };
 
   return (
-    <>
+    <div>
       <Box
         {...rest}
         mx={1}
@@ -51,20 +49,11 @@ function MainNavBarDropdown({ name, icon, children, collapseStatus, light, href,
           {children}
         </Collapse>
       )}
-    </>
+    </div>
   );
 }
 
-// Setting default values for the props of DefaultNavbarDropdown
-MainNavBarDropdown.defaultProps = {
-  children: false,
-  collapseStatus: false,
-  light: false,
-  href: '',
-  route: ''
-};
-
-// Typechecking props for the DefaultNavbarDropdown
+// Typechecking props for the MainNavBarDropdown
 MainNavBarDropdown.propTypes = {
   name: PropTypes.string.isRequired,
   icon: PropTypes.node.isRequired,
@@ -73,7 +62,7 @@ MainNavBarDropdown.propTypes = {
   light: PropTypes.bool,
   href: PropTypes.string,
   route: PropTypes.string,
-  collapse: PropTypes.bool.isRequired
+  collapse: PropTypes.bool
 };
 
 export default MainNavBarDropdown;
