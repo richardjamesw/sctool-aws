@@ -465,14 +465,15 @@ const MainNavBar = ({
         zIndex={3}
         sx={({ palette: { transparent: transparentColor } }) => ({
           backgroundColor: transparent ? transparentColor.main : 'rgba(253, 253, 253, 0)',
-          backdropFilter: transparent ? 'none' : `saturate(200%) blur(30px)`
+          backdropFilter: transparent ? 'none' : `saturate(200%) blur(30px)`,
+          boxShadow: 2
         })}
       >
         <Box display="flex" justifyContent="space-between" alignItems="center">
           <Box component={Link} to="/" lineHeight={1} py={transparent ? 1.5 : 0.75} pl={relative || transparent ? 0 : { xs: 0, lg: 1 }}>
-            <Typography variant="button" fontWeight="bold" color={light ? 'white' : 'dark'}>
+            <Button fontWeight="bold" color={light ? 'white' : 'dark'}>
               {brand}
-            </Typography>
+            </Button>
           </Box>
           <Box color="inherit" display={{ xs: 'none', lg: 'flex' }} ml="auto" mr={center ? 'auto' : 0}>
             {renderNavbarItems}
