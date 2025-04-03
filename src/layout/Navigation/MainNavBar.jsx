@@ -29,6 +29,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
+import { IconChevronDown, IconChevronUp } from '@tabler/icons-react';
 
 import NavBarDropdown from './MainNavBarDropdown';
 import NavBarMobile from './MainNavBarMobile';
@@ -513,7 +514,11 @@ const MainNavBar = ({
             sx={{ cursor: 'pointer' }}
             onClick={openMobileNavbar}
           >
-            <Icon fontSize="default">{mobileNavbar ? 'close' : 'menu'}</Icon>
+            {mobileNavbar ? (
+              <IconChevronUp stroke={1.5} size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
+            ) : (
+              <IconChevronDown stroke={1.5} size="1rem" style={{ marginTop: 'auto', marginBottom: 'auto' }} />
+            )}
           </Box>
         </Box>
         <Box
